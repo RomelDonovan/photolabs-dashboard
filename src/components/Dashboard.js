@@ -40,7 +40,7 @@ class Dashboard extends Component {
       return <Loading data={data} />;
     }
 
-    const panels = data.map(panel => (
+    const panels = (this.state.focused ? data.filter(panel => this.state.focused === panel.id): data).map(panel => (
       <Panel
         key={panel.id}
         id={panel.id}
